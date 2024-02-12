@@ -105,7 +105,7 @@ func (h *handler) GetList(w http.ResponseWriter, r *http.Request) error {
 		sortOptions = options
 	}
 
-	all, err := h.service.GetAll(r.Context(), sortOptions)
+	all, err := h.service.GetAll(r.Context(), filterOptions, sortOptions)
 	if err != nil {
 		w.WriteHeader(400)
 		return err
